@@ -13,28 +13,28 @@ public class Rectangle implements Bestable{
         return length * breadth;
     }
 
-//    @Override
-//    public boolean equals(Object o) {
-//        if (this == o) return true;
-//        if (o == null || getClass() != o.getClass()) return false;
-//
-//        Rectangle rectangle = (Rectangle) o;
-//
-//        if (Double.compare(rectangle.length, length) != 0) return false;
-//        return Double.compare(rectangle.breadth, breadth) == 0;
-//
-//    }
-//
-//    @Override
-//    public int hashCode() {
-//        int result;
-//        long temp;
-//        temp = Double.doubleToLongBits(length);
-//        result = (int) (temp ^ (temp >>> 32));
-//        temp = Double.doubleToLongBits(breadth);
-//        result = 31 * result + (int) (temp ^ (temp >>> 32));
-//        return result;
-//    }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Rectangle rectangle = (Rectangle) o;
+
+        if (Double.compare(rectangle.length, length) != 0) return false;
+        return Double.compare(rectangle.breadth, breadth) == 0;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result;
+        long temp;
+        temp = Double.doubleToLongBits(length);
+        result = (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(breadth);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        return result;
+    }
 
     @Override
     public boolean betterThan(Object o) {

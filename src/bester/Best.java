@@ -4,24 +4,23 @@ package bester;
  * Created by rhuan on 10/14/16.
  */
 public class Best {
-    private Rectangle[] rectangleList;
 
-    Best(Rectangle[] rectangleList) {
+    private Bestable[] bestables;
 
-        if(rectangleList == null || rectangleList.length ==0){
+    public Best(Bestable[] bestables) {
+        if (bestables==null || bestables.length==0)
             throw new NullPointerException();
-        }
-        this.rectangleList = rectangleList;
+        this.bestables = bestables;
     }
 
-    Rectangle getBestRetangle() {
-        int listLength = rectangleList.length;
-        Rectangle result = rectangleList[0];
-        for (int i=0;i<listLength-1;i++){
-            if (rectangleList[i + 1].betterThan(rectangleList[i])){
-                result = rectangleList[i+1];
+    Bestable getBest() {
+        Bestable result = bestables[0];
+        for (int i = 0; i < bestables.length - 1; i++) {
+            if (bestables[i+1].betterThan(bestables[i])){
+                result = bestables[i+1];
             }
         }
         return result;
     }
+
 }
