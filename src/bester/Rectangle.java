@@ -22,7 +22,6 @@ public class Rectangle implements Bestable{
 
         if (Double.compare(rectangle.length, length) != 0) return false;
         return Double.compare(rectangle.breadth, breadth) == 0;
-
     }
 
     @Override

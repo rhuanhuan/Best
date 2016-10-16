@@ -1,8 +1,5 @@
 package bester;
 
-/**
- * Created by rhuan on 10/14/16.
- */
 public class Best {
 
     private Bestable[] bestables;
@@ -15,9 +12,9 @@ public class Best {
 
     Bestable getBest() {
         Bestable result = bestables[0];
-        for (int i = 0; i < bestables.length - 1; i++) {
-            if (bestables[i+1].betterThan(bestables[i])){
-                result = bestables[i+1];
+        for (int i = 1; i < bestables.length; i++) {
+            if (bestables[i].betterThan(result)){
+                result = bestables[i];
             }
         }
         return result;
